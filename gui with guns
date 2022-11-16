@@ -1,0 +1,13 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window  = Library.CreateLib("PenguinManiacks guns", "Ocean")
+local Tab     = Window:NewTab("Guns")
+local Section = Tab:NewSection("execute in shop")
+Section:NewButton("name", "desc", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
+end)
+Section:NewButton("name", "desc", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
+end)
+Section:NewButton("name", "desc", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
+end)
