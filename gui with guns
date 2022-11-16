@@ -2,12 +2,12 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window  = Library.CreateLib("PenguinManiacks guns", "Ocean")
 local Tab     = Window:NewTab("Guns")
 local Section = Tab:NewSection("execute in shop")
-Section:NewButton("name", "desc", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
+Section:NewButton("dorito", "dorito", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/every-gun/main/dorito"))() -- function
 end)
-Section:NewButton("name", "desc", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
+Section:NewButton("christmas", "shoots christmas trees", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/every-gun/main/cristmas"))() -- function
 end)
-Section:NewButton("name", "desc", function()
+Section:NewButton("thanksgiving gun", "turkey legs", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
 end)
