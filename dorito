@@ -1,0 +1,49 @@
+--// M249 (Execute in prerun shop)
+
+local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
+
+-- Create your tool here
+local exampleTool = LoadCustomInstance("rbxassetid://11425785982")
+
+-- Create custom shop item
+CustomShop.CreateItem(exampleTool, {
+    Title = "M249",
+    Desc = "Don't shoot your friends!",
+    Image = "https://cdn.discordapp.com/attachments/1036318416405012520/1036379216679284857/unknown.png",
+    Price = 999,
+    Stack = 1,
+})
+
+local UIS = game:GetService("UserInputService")
+local tool = exampleTool
+
+local anim = Instance.new("Animation")
+anim.Name = "M249Idle"
+anim.AnimationId = "rbxassetid://3034291703"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+
+tool.Equipped:Connect(function()
+    track.Priority = Enum.AnimationPriority.Movement
+    track.Looped = false
+    track:Play()
+    UIS.InputBegan:Connect(function(input)
+      if tool.Parent == game.Players.LocalPlayer.Character then
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                local bullet = LoadCustomInstance("rbxassetid://4912277")
+                bullet.Parent = game.Workspace
+                bullet.CFrame = tool.BulletPart.CFrame
+                tool.Handle.Fire:Play()
+            
+                wait(1)
+                bullet:Destroy()
+            end
+        end
+    end)
+end)
+
+tool.Unequipped:Connect(function()
+    if track then
+        track:Stop()
+    end
+end)
