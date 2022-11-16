@@ -9,5 +9,5 @@ Section:NewButton("christmas", "shoots christmas trees", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/every-gun/main/cristmas"))() -- function
 end)
 Section:NewButton("thanksgiving gun", "turkey legs", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/g8ZuZNvK"))() -- function
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/every-gun/main/turkey%20leg"))() -- function
 end)
