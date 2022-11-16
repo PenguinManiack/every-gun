@@ -32,7 +32,7 @@ tool.Equipped:Connect(function()
 UIS.InputBegan:Connect(function(input)
         if tool.Parent == game.Players.LocalPlayer.Character then
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local bullet = LoadCustomInstance("rbxassetid://11581381399")
+                local bullet = LoadCustomInstance("rbxassetid://11581497828")
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
                 local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
