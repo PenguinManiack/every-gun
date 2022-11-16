@@ -4,14 +4,14 @@ local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Reg
 local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
 
 -- Create your tool here
-local exampleTool = LoadCustomInstance("rbxassetid://11425785982")
+local exampleTool = LoadCustomInstance("rbxassetid://4829731570") --The gun model id
 
 -- Create custom shop item
 CustomShop.CreateItem(exampleTool, {
     Title = "M249",
     Desc = "Don't shoot your friends!",
-    Image = "https://cdn.discordapp.com/attachments/1036318416405012520/1036379216679284857/unknown.png",
-    Price = 999,
+    Image = "https://cdn.discordapp.com/attachments/1037151423684694116/1042522097479598120/image.png",
+    Price = "FREE",
     Stack = 1,
 })
 
@@ -25,25 +25,33 @@ local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
 
 tool.Equipped:Connect(function()
     track.Priority = Enum.AnimationPriority.Movement
-    track.Looped = false
+    track.Looped = true
     track:Play()
-    UIS.InputBegan:Connect(function(input)
-      if tool.Parent == game.Players.LocalPlayer.Character then
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local bullet = LoadCustomInstance("rbxassetid://4912277")
+    end)
+
+UIS.InputBegan:Connect(function(input)
+        if tool.Parent == game.Players.LocalPlayer.Character then
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                local bullet = LoadCustomInstance("rbxassetid://4912277") --The *bullet model id*
+                local HRP = tool.BulletPart
+                local Attachment = Instance.new("Attachment", bullet)
+                local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
+                LV.MaxForce = math.huge -- no need to worry about this
+                LV.VectorVelocity = HRP.CFrame.lookVector * 300 -- change 100 with how fast you want the projectile to go
+                LV.Attachment0 = Attachment --Required Attachment
                 bullet.Parent = game.Workspace
                 bullet.CFrame = tool.BulletPart.CFrame
                 tool.Handle.Fire:Play()
-            
-                wait(1)
+
+                wait(10)
                 bullet:Destroy()
-            end
         end
-    end)
-end)
+end
 
 tool.Unequipped:Connect(function()
     if track then
         track:Stop()
-    end
+            bullet:Destroy()
+end
+    end)
 end)
