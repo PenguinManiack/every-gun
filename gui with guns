@@ -11,3 +11,5 @@ end)
 Section:NewButton("thanksgiving gun", "turkey legs", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/every-gun/main/turkey%20leg"))() -- function
 end)
+local CreditsTab     = Window:NewTab("credit")
+local CreditsSection = CreditsTab:NewSection("credit to senors, she is cracked")
