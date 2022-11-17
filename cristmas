@@ -8,7 +8,7 @@ local exampleTool = LoadCustomInstance("rbxassetid://11581313606")
 
 -- Create custom shop item
 CustomShop.CreateItem(exampleTool, {
-    Title = "M249",
+    Title = "Christmas gun",
     Desc = "Don't shoot your friends!",
     Image = "https://cdn.discordapp.com/attachments/1039580159449243710/1042512938608644206/CwismasGunThumbnail.png",
     Price = "FREE",
