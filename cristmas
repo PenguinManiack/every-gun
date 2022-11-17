@@ -32,7 +32,6 @@ tool.Equipped:Connect(function()
 UIS.InputBegan:Connect(function(input)
         if tool.Parent == game.Players.LocalPlayer.Character then
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local script.Parent.flash.MuzzleEffect.Enabled = true
                 local bullet = LoadCustomInstance("rbxassetid://11587360474") --The *bullet model id*
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
