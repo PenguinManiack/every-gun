@@ -42,6 +42,7 @@ UIS.InputBegan:Connect(function(input)
                 bullet.Parent = game.Workspace
                 bullet.CFrame = tool.BulletPart.CFrame
                 tool.Handle.Fire:Play()
+                tool.flash.BillboardGui.ImageLabel.Visible = true
 
                 wait(10)
                 bullet:Destroy()
