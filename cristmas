@@ -4,13 +4,13 @@ local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Reg
 local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
 
 -- Create your tool here
-local exampleTool = LoadCustomInstance("rbxassetid://11581313606")
+local exampleTool = LoadCustomInstance("rbxassetid://11587296949") --The gun model id
 
 -- Create custom shop item
 CustomShop.CreateItem(exampleTool, {
-    Title = "Christmas gun",
+    Title = "turkey gun",
     Desc = "Don't shoot your friends!",
-    Image = "https://cdn.discordapp.com/attachments/1039580159449243710/1042512938608644206/CwismasGunThumbnail.png",
+    Image = "https://cdn.discordapp.com/attachments/1042780576605802496/1042812228035956856/image_2022-11-17_094311236-removebg-preview.png",
     Price = "FREE",
     Stack = 1,
 })
@@ -32,7 +32,8 @@ tool.Equipped:Connect(function()
 UIS.InputBegan:Connect(function(input)
         if tool.Parent == game.Players.LocalPlayer.Character then
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local bullet = LoadCustomInstance("rbxassetid://11581497828")
+                local script.Parent.flash.MuzzleEffect.Enabled = true
+                local bullet = LoadCustomInstance("rbxassetid://11587360474") --The *bullet model id*
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
                 local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
