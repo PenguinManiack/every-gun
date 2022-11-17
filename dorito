@@ -43,16 +43,22 @@ UIS.InputBegan:Connect(function(input)
                 bullet.CFrame = tool.BulletPart.CFrame
                 tool.Handle.Fire:Play()
                 tool.flash.BillboardGui.ImageLabel.Visible = true
-
+            tool.flash.BillboardGui.ImageLabel.Visible = true
                 wait(10)
                 bullet:Destroy()
+        end   
+    end
+        UIS.InputEnded:Connect(function(input)
+            if tool.Parent == game.Players.LocalPlayer.Character then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    tool.flash.BillboardGui.ImageLabel.Visible = false
+                end  
         end
-end
-
 tool.Unequipped:Connect(function()
     if track then
         track:Stop()
             bullet:Destroy()
 end
+end)
     end)
 end)
