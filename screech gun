@@ -30,7 +30,7 @@ tool.Equipped:Connect(function()
 UIS.InputBegan:Connect(function(input)
         if tool.Parent == game.Players.LocalPlayer.Character then
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local bullet = LoadCustomInstance("rbxassetid://10961277552") --The *bullet model id*
+                local bullet = LoadCustomInstance("rbxassetid://11589460560") --The *bullet model id*
                 bullet.Anchored = false
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
