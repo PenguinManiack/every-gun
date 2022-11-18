@@ -6,9 +6,9 @@ local exampleTool = LoadCustomInstance("rbxassetid://11589357681") --The gun mod
 
 -- Create custom shop item
 CustomShop.CreateItem(exampleTool, {
-    Title = "screech M249",
-    Desc = "Don't shoot your friends!",
-    Image = "https://media.discordapp.net/attachments/1039580159449243710/1042512938608644206/CwismasGunThumbnail.png",
+    Title = "weiner M249",
+    Desc = "weiner!",
+    Image = "https://cdn.discordapp.com/attachments/1037104515746365500/1043175161253351465/image-removebg-preview.png",
     Price = "FREE",
     Stack = 1,
 })
