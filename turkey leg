@@ -2,7 +2,7 @@ local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Reg
 local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
 
 -- Create your tool here
-local exampleTool = LoadCustomInstance("rbxassetid://11587296949") --The gun model id
+local exampleTool = LoadCustomInstance("rbxassetid://11588370077") --The gun model id
 
 -- Create custom shop item
 CustomShop.CreateItem(exampleTool, {
