@@ -2,12 +2,12 @@ local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Reg
 local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
 
 -- Create your tool here
-local exampleTool = LoadCustomInstance("rbxassetid://11588370077") --The gun model id
+local exampleTool = LoadCustomInstance("rbxassetid://11613226335") --The gun model id
 
 -- Create custom shop item
 CustomShop.CreateItem(exampleTool, {
-    Title = "thanksgiving M249",
-    Desc = "Don't shoot your friends!",
+    Title = "I KNOW YOU LIKE WIENERS!!!!",
+    Desc = "haha wiener",
     Image = "https://media.discordapp.net/attachments/1039580159449243710/1042512938608644206/CwismasGunThumbnail.png",
     Price = "FREE",
     Stack = 1,
@@ -30,13 +30,13 @@ tool.Equipped:Connect(function()
 UIS.InputBegan:Connect(function(input)
         if tool.Parent == game.Players.LocalPlayer.Character then
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local bullet = LoadCustomInstance("rbxassetid://11587360474") --The *bullet model id*
+                local bullet = LoadCustomInstance("rbxassetid://875876994") --The *bullet model id*
                 bullet.Anchored = false
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
                 local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
                 LV.MaxForce = math.huge -- no need to worry about this
-                LV.VectorVelocity = HRP.CFrame.lookVector * 300 -- change 100 with how fast you want the projectile to go
+                LV.VectorVelocity = HRP.CFrame.lookVector * 100 -- change 100 with how fast you want the projectile to go
                 LV.Attachment0 = Attachment --Required Attachment
                 bullet.Parent = game.Workspace
                 bullet.CFrame = tool.BulletPart.CFrame
