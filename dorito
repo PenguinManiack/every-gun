@@ -32,7 +32,7 @@ UIS.InputBegan:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local bullet = LoadCustomInstance("rbxassetid://4912277") --The *bullet model id*
                 bullet.Anchored = false
-                bullet.Massless = true
+                bullet.Massless = false
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
                 local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
