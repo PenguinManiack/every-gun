@@ -32,16 +32,19 @@ UIS.InputBegan:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
                 local bullet = LoadCustomInstance("rbxassetid://4912277") --The *bullet model id*
                 bullet.Anchored = false
+                bullet.Massless = true
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
                 local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
                 LV.MaxForce = math.huge -- no need to worry about this
-                LV.VectorVelocity = HRP.CFrame.lookVector * 300 -- change 100 with how fast you want the projectile to go
+                LV.VectorVelocity = HRP.CFrame.lookVector * 100 -- change 100 with how fast you want the projectile to go
                 LV.Attachment0 = Attachment --Required Attachment
                 bullet.Parent = game.Workspace
                 bullet.CFrame = tool.BulletPart.CFrame
                 tool.Handle.Fire:Play()
                 tool.flash.BillboardGui.ImageLabel.Visible = true
+                wait(1)
+                LV:Destroy()
                 wait(10)
                 bullet:Destroy()
         end   
