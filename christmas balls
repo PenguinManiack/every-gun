@@ -30,8 +30,9 @@ tool.Equipped:Connect(function()
 UIS.InputBegan:Connect(function(input)
         if tool.Parent == game.Players.LocalPlayer.Character then
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                local bullet = LoadCustomInstance("rbxassetid://11636602528") --The *bullet model id*
+                local bullet = LoadCustomInstance("rbxassetid://11689060142") --The *bullet model id*
                 bullet.Anchored = false
+                bullet.Massless = false 
                 local HRP = tool.BulletPart
                 local Attachment = Instance.new("Attachment", bullet)
                 local LV = Instance.new("LinearVelocity", Attachment) -- creating the linear velocity
@@ -42,6 +43,8 @@ UIS.InputBegan:Connect(function(input)
                 bullet.CFrame = tool.BulletPart.CFrame
                 tool.Handle.Fire:Play()
                 tool.flash.BillboardGui.ImageLabel.Visible = true
+                wait(1)
+                LV:Destroy()
                 wait(10)
                 bullet:Destroy()
         end   
@@ -58,5 +61,5 @@ tool.Unequipped:Connect(function()
             bullet:Destroy()
 end
 end)
-    end)
+        end)
 end)
